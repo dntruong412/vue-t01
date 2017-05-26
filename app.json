@@ -1,0 +1,20 @@
+{
+  "name": "vue-t01",
+  "description": "Test vue",
+  "scripts": {
+    "postdeploy": "npm run prod"
+  },
+  "env": {
+    "KEY1": "123456"
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
