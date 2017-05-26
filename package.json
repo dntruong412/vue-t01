@@ -1,0 +1,32 @@
+{
+  "name": "e01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack -w",
+    "dev": "webpack",
+    "prod": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "bootstrap": "^4.0.0-alpha.6",
+    "css-loader": "^0.28.1",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^12.0.4",
+    "vue-template-compiler": "^2.3.3",
+    "webpack": "^2.5.1"
+  },
+  "dependencies": {
+    "vue": "^2.3.3"
+  }
+}
