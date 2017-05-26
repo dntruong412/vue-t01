@@ -2,12 +2,13 @@
   "name": "e01",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "src/script.js",
   "scripts": {
     "test": "echo 1",
     "watch": "webpack -w",
     "dev": "webpack",
-    "prod": "webpack"
+    "prod": "webpack",
+    "start": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -28,5 +29,8 @@
   },
   "dependencies": {
     "vue": "^2.3.3"
+  },
+  "engines": {
+    "node": "4.1.1"
   }
 }
