@@ -8,4 +8,13 @@ export default class Todo {
         this.description = description;
     }
 
+    static find(list, id) {
+        for (let item of list) {
+            if(item.id == id) {
+                return item;
+            }
+        }
+        return null;
+    }
+
 }

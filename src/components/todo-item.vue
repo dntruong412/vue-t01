@@ -1,7 +1,8 @@
 <template>
-    <li class="todo">
-        {{todo.title}} 
-        <small class="text-muted text-italic">{{todo.description}}</small>
+    <li class="todo list-item">
+        <router-link class='nav-item nav-link' :to="{ name:'post.item', params:{id: todo.id} }">
+            {{todo.title}}
+        </router-link>
         <button @click="edit(todo.id)" class="btn btn-primary btn-sm">i</button>
         <button @click="remove(todo.id)" class="btn btn-secondary btn-sm">x</button>
     </li>
@@ -12,20 +13,11 @@
         props: ['todo'],
 
         methods: {
-            edit: function(id){
-                this.$emit('anUpdate', id);
+            edit(id){
+                this.$emit('showUpdate', id);
             },
-
-            remove: function(id){
-                let i = -1;
-                this.$parent.todos.find((td, index) => {
-                    if (td.id == id) {
-                        i = index;
-                        return; 
-                    }
-                });
-                if(i < 0) return;
-                this.$parent.todos.splice(i, 1);
+            remove(id){
+                this.$emit('removeTodo', id);
             }
         }
     }

@@ -1,10 +1,18 @@
 <template>
-    <div class="col-12">
-        <hello-component :msg="helloText"></hello-component>
-        <update-form :todos.sync="claimList"></update-form>
-        <todo-list :todos="claimList"></todo-list>
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-12">
+                <hello-component :msg="helloText"></hello-component>
+                <update-form :todos="todoList" ref="updateForm"></update-form>
+                <todo-list :todos="todoList" @showUpdate="showUpdate"></todo-list>
+            </div>
+        </div>
     </div>
 </template>
+
+<style lang="scss" rel="stylesheet/scss">
+    @import "src/scss/bootstrap";
+</style>
 
 <script type="text/javascript">
     import HelloComponent    from '../components/hello.vue';
@@ -15,9 +23,9 @@
     export default {
         data() {
             return {
-                helloText: 'This is a hello text',
+                helloText: 'This is a home',
 
-                claimList: [
+                todoList: [
                 new Todo(1,'Vegetables', 'aaaaaaaa'),
                 new Todo(2,'Cheese', 'bbbbbbb'),
                 new Todo(3,'Tomato', 'dddd'),
@@ -29,6 +37,11 @@
             'hello-component': HelloComponent,
             'todo-list': TodoListComponent,
             'update-form': UpdateForm
+        },
+        methods: {
+            showUpdate(id) {
+                this.$refs.updateForm.preUpdate(Todo.find(this.todoList, id));
+            }
         }
     }
 </script>

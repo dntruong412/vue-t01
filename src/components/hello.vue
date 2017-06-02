@@ -7,7 +7,7 @@ export default {
     props: ['msg'],
   data () {
     return {
-      text: ' AAA!'
+      text: ' !'
     }
   }
 }
